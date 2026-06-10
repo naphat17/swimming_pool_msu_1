@@ -237,9 +237,6 @@ export default function AdminDashboardPage() {
                     <CardTitle className="text-lg font-black text-slate-900 uppercase tracking-tight">กิจกรรมล่าสุด</CardTitle>
                     <CardDescription className="text-xs font-bold uppercase tracking-widest text-slate-400 mt-1">Recent System Logs</CardDescription>
                   </div>
-                  <Button variant="ghost" size="sm" asChild className="text-red-600 hover:text-red-700 hover:bg-red-50 font-black text-[10px] uppercase tracking-widest">
-                    <Link href="/admin/activities">View All</Link>
-                  </Button>
                 </div>
               </CardHeader>
               <CardContent className="p-0">
