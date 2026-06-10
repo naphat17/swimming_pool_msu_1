@@ -12,7 +12,7 @@ import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3002"
+const API_URL = process.env.NEXT_PUBLIC_API_URL || ""
 export default function ForgotPasswordPage() {
   const [email, setEmail] = useState("")
   const [loading, setLoading] = useState(false)
@@ -24,7 +24,7 @@ export default function ForgotPasswordPage() {
     setLoading(true)
 
     try {
-      const response = await fetch("http://localhost:3001/api/auth/forgot-password", {
+      const response = await fetch(`${API_URL}/api/auth/forgot-password`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),

@@ -24,7 +24,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Plus, Edit, Trash2, Settings, CreditCard } from "lucide-react"
 
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3002"
+const API_URL = process.env.NEXT_PUBLIC_API_URL || ""
 interface Setting {
   setting_key: string
   setting_value: string
@@ -76,7 +76,7 @@ export default function AdminSettingsPage() {
   const fetchSettings = async () => {
     try {
       const token = localStorage.getItem("token")
-      const response = await fetch("http://localhost:3001/api/admin/settings", {
+      const response = await fetch(`${API_URL}/api/admin/settings`, {
         headers: { Authorization: `Bearer ${token}` },
       })
 
@@ -109,7 +109,7 @@ export default function AdminSettingsPage() {
   const fetchMembershipTypes = async () => {
     try {
       const token = localStorage.getItem("token")
-      const response = await fetch("http://localhost:3001/api/admin/membership-types", {
+      const response = await fetch(`${API_URL}/api/admin/membership-types`, {
         headers: { Authorization: `Bearer ${token}` },
       })
 
@@ -132,7 +132,7 @@ export default function AdminSettingsPage() {
         setting_value: value,
       }))
 
-      const response = await fetch("http://localhost:3001/api/admin/settings", {
+      const response = await fetch(`${API_URL}/api/admin/settings`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -168,7 +168,7 @@ export default function AdminSettingsPage() {
 
     try {
       const token = localStorage.getItem("token")
-      const response = await fetch("http://localhost:3001/api/admin/membership-types", {
+      const response = await fetch(`${API_URL}/api/admin/membership-types`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -213,7 +213,7 @@ export default function AdminSettingsPage() {
 
     try {
       const token = localStorage.getItem("token")
-      const response = await fetch(`http://localhost:3001/api/admin/membership-types/${editingMembership.id}`, {
+      const response = await fetch(`${API_URL}/api/admin/membership-types/${editingMembership.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

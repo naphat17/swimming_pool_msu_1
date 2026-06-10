@@ -38,7 +38,7 @@ import { Separator } from "@/components/ui/separator"
 import { cn } from "@/lib/utils"
 
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3002"
+const API_URL = process.env.NEXT_PUBLIC_API_URL || ""
 interface User {
   id: number
   username: string

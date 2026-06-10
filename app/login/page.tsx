@@ -14,7 +14,7 @@ import Link from "next/link"
 import { Waves, User, Lock } from "lucide-react"
 
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3002"
+const API_URL = process.env.NEXT_PUBLIC_API_URL || ""
 export default function LoginPage() {
   const [usernameOrEmail, setUsernameOrEmail] = useState("")
   const [password, setPassword] = useState("")

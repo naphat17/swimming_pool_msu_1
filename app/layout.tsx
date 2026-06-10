@@ -6,7 +6,7 @@ import { AuthProvider } from "@/components/auth-provider"
 import { Toaster } from "@/components/ui/toaster"
 
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3002"
+const API_URL = process.env.NEXT_PUBLIC_API_URL || ""
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {

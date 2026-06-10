@@ -27,7 +27,7 @@ import { useRef } from "react"
 import { Dialog as BaseDialog } from "@/components/ui/dialog"
 
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3002"
+const API_URL = process.env.NEXT_PUBLIC_API_URL || ""
 interface Reservation {
   id: number
   user_name: string

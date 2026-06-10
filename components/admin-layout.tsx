@@ -10,7 +10,7 @@ import { usePathname } from "next/navigation"
 import { useState } from "react"
 
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3002"
+const API_URL = process.env.NEXT_PUBLIC_API_URL || ""
 const navigation = [
   { name: "แดชบอร์ด", href: "/admin/dashboard", icon: LayoutDashboard },
   { name: "เช็คการเข้าใช้บริการ", href: "/admin/checkin", icon: ClipboardCheck },

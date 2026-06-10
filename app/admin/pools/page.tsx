@@ -25,7 +25,7 @@ import { Switch } from "@/components/ui/switch"
 import { Plus, Edit, MapPin, Users, Settings } from "lucide-react"
 
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3002"
+const API_URL = process.env.NEXT_PUBLIC_API_URL || ""
 interface Pool {
   id: number
   name: string
@@ -89,7 +89,7 @@ export default function AdminPoolsPage() {
   const fetchPools = async () => {
     try {
       const token = localStorage.getItem("token")
-      const response = await fetch("http://localhost:3001/api/admin/pools", {
+      const response = await fetch(`${API_URL}/api/admin/pools`, {
         headers: { Authorization: `Bearer ${token}` },
       })
 
@@ -107,7 +107,7 @@ export default function AdminPoolsPage() {
   const fetchPoolSchedule = async (poolId: number) => {
     try {
       const token = localStorage.getItem("token")
-      const response = await fetch(`http://localhost:3001/api/admin/pools/${poolId}/schedule`, {
+      const response = await fetch(`${API_URL}/api/admin/pools/${poolId}/schedule`, {
         headers: { Authorization: `Bearer ${token}` },
       })
 
@@ -125,7 +125,7 @@ export default function AdminPoolsPage() {
 
     try {
       const token = localStorage.getItem("token")
-      const response = await fetch("http://localhost:3001/api/admin/pools", {
+      const response = await fetch(`${API_URL}/api/admin/pools`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -170,7 +170,7 @@ export default function AdminPoolsPage() {
 
     try {
       const token = localStorage.getItem("token")
-      const response = await fetch(`http://localhost:3001/api/admin/pools/${editingPool.id}`, {
+      const response = await fetch(`${API_URL}/api/admin/pools/${editingPool.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -213,7 +213,7 @@ export default function AdminPoolsPage() {
 
     try {
       const token = localStorage.getItem("token")
-      const response = await fetch(`http://localhost:3001/api/admin/pools/${selectedPool.id}/schedule`, {
+      const response = await fetch(`${API_URL}/api/admin/pools/${selectedPool.id}/schedule`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

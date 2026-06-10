@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Clock, MapPin, Users } from "lucide-react"
 
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3002"
+const API_URL = process.env.NEXT_PUBLIC_API_URL || ""
 interface PoolSchedule {
   id: number
   name: string
